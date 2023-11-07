@@ -10,7 +10,7 @@ class LoggedIn extends React.Component {
     signOut(auth)
       .then(() => {
         console.log('Sign-out successful');
-        window.location.replace("http://localhost:5173/");
+        window.location.href = ("/");
       })
       .catch((error) => {
         console.error('Sign-out error', error);
@@ -34,7 +34,7 @@ const AuthChecker = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        return window.location.replace("http://localhost:5173/");
+        return window.location.href = ("/");
       }
     });
 

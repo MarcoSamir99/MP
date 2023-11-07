@@ -23,7 +23,7 @@ class SignIn extends Component {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const token = userCredential.user.accessToken;
-        const loggedInURL = `http://localhost:5173/logged-in?token=${token}`;
+        const loggedInURL = `/logged-in?token=${token}`;
         window.location.href = loggedInURL;
       })
       .catch((error) => {
